@@ -1,6 +1,5 @@
-package com.datien.jwtsecurity.repository;
+package com.datien.jwtsecurity.user;
 
-import com.datien.jwtsecurity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

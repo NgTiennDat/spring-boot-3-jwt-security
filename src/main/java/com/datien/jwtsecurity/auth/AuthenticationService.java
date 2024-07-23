@@ -1,6 +1,6 @@
 package com.datien.jwtsecurity.auth;
 
-import com.datien.jwtsecurity.repository.UserRepository;
+import com.datien.jwtsecurity.user.UserRepository;
 import com.datien.jwtsecurity.service.JwtService;
 import com.datien.jwtsecurity.user.Role;
 import com.datien.jwtsecurity.user.User;

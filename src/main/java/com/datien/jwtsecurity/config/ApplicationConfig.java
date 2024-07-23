@@ -1,6 +1,6 @@
 package com.datien.jwtsecurity.config;
 
-import com.datien.jwtsecurity.repository.UserRepository;
+import com.datien.jwtsecurity.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
