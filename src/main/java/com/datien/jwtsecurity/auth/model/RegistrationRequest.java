@@ -1,4 +1,4 @@
-package com.datien.jwtsecurity.auth;
+package com.datien.jwtsecurity.auth.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

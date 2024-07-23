@@ -1,5 +1,8 @@
 package com.datien.jwtsecurity.auth;
 
+import com.datien.jwtsecurity.auth.model.AuthenticationRequest;
+import com.datien.jwtsecurity.auth.model.AuthenticationResponse;
+import com.datien.jwtsecurity.auth.model.RegistrationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

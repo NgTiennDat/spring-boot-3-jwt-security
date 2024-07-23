@@ -1,4 +1,4 @@
-package com.datien.jwtsecurity.service;
+package com.datien.jwtsecurity.jwtUtils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
