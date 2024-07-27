@@ -1,4 +1,4 @@
-package com.datien.jwtsecurity.user;
+package com.datien.jwtsecurity.user.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

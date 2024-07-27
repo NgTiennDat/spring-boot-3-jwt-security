@@ -1,6 +1,6 @@
 package com.datien.jwtsecurity.token;
 
-import com.datien.jwtsecurity.user.User;
+import com.datien.jwtsecurity.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
 
