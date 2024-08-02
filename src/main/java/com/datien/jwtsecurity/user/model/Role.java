@@ -2,6 +2,7 @@ package com.datien.jwtsecurity.user.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Collections;
@@ -43,7 +44,7 @@ public enum Role {
                 .stream()
                 .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
                 .collect(Collectors.toList());
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + this.name()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + name()));
         return authorities;
-    };
+    }
 }
