@@ -1,6 +1,12 @@
 package com.datien.jwtsecurity.user.model;
 
-public class UserForgotPassword {
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Builder
+public class UserForgotPassword {
     private String email;
 }
