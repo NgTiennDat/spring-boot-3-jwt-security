@@ -23,7 +23,6 @@ public class Book {
     private Long id;
     private String title;
     private String authorName;
-    private String authorEmail;
     private String publisher;
     private String synopsis;
     private boolean available;
