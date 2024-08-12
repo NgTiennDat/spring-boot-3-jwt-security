@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BookResponse {
+public class BookRequest {
     private String title;
     private String authorName;
     private String publisher;
