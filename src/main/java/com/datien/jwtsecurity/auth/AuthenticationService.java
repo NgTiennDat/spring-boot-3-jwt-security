@@ -39,7 +39,7 @@ public class AuthenticationService {
 
         var savedUser = userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
-        var refreshToken = jwtService.generateToken(user);
+        var refreshToken = jwtService.generateRefreshToken(user);
 
         saveUserToken(savedUser, jwtToken);
         return buildAuthResponse(jwtToken, refreshToken);
@@ -58,7 +58,7 @@ public class AuthenticationService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         var jwtToken = jwtService.generateToken(user);
-        var refreshToken = jwtService.generateToken(user);
+        var refreshToken = jwtService.generateRefreshToken(user);
         revokeAllUserTokens(user);
         saveUserToken(user, jwtToken);
         return buildAuthResponse(jwtToken, refreshToken);
