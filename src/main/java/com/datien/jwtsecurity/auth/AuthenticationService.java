@@ -39,9 +39,10 @@ public class AuthenticationService {
 
         var savedUser = userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
+        var refreshToken = jwtService.generateToken(user);
 
         saveUserToken(savedUser, jwtToken);
-        return buildAuthResponse(jwtToken);
+        return buildAuthResponse(jwtToken, refreshToken);
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -57,9 +58,10 @@ public class AuthenticationService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         var jwtToken = jwtService.generateToken(user);
+        var refreshToken = jwtService.generateToken(user);
         revokeAllUserTokens(user);
         saveUserToken(user, jwtToken);
-        return buildAuthResponse(jwtToken);
+        return buildAuthResponse(jwtToken, refreshToken);
     }
 
     private void revokeAllUserTokens(User user) {
@@ -89,9 +91,10 @@ public class AuthenticationService {
         tokenRepository.save(token);
     }
 
-    private AuthenticationResponse buildAuthResponse(String jwtToken) {
+    private AuthenticationResponse buildAuthResponse(String jwtToken, String refreshToken) {
         return AuthenticationResponse.builder()
-                .token(jwtToken)
+                .accessToken(jwtToken)
+                .refreshToken(refreshToken)
                 .build();
     }
 }

@@ -66,4 +66,8 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
     }
+
+    public String getFullName() {
+        return firstname + " " + lastname;
+    }
 }
