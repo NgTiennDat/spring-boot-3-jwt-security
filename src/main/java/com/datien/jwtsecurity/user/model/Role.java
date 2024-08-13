@@ -37,11 +37,12 @@ public enum Role {
             )
     );
 
+    @Getter
     private final Set<Permission> permissions;
 
-    List<SimpleGrantedAuthority> grantedAuthorities() {
+    public List<SimpleGrantedAuthority> getAuthorities() {
         var authorities = permissions.stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.name()))
+                .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
                 .collect(Collectors.toList());
 
         authorities.add(new SimpleGrantedAuthority("ROLE_" + name()));
